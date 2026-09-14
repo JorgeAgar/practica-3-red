@@ -47,7 +47,7 @@ resource "google_compute_instance" "app" {
 
 resource "google_compute_firewall" "permitir_http" {
   name    = "permitir-http"
-  network = "default"
+  network = google_compute_subnetwork.publica.id
 
   allow {
     protocol = "tcp"
@@ -60,7 +60,7 @@ resource "google_compute_firewall" "permitir_http" {
 
 resource "google_compute_firewall" "permitir_ssh" {
   name    = "permitir-ssh"
-  network = "default"
+  network = google_compute_subnetwork.publica.id
 
   allow {
     protocol = "tcp"
