@@ -27,7 +27,7 @@ resource "google_compute_instance" "app" {
   name         = "${var.prefijo}-app"
   machine_type = var.tipo_maquina
   zone         = var.zona
-  tags         = ["<etiqueta de red que usará el cortafuegos>"]
+  tags         = ["grupo-2-fw"]
 
   boot_disk {
     initialize_params {
