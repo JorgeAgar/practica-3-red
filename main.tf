@@ -27,7 +27,7 @@ resource "google_compute_instance" "app" {
   name         = "${var.prefijo}-app"
   machine_type = var.tipo_maquina
   zone         = var.zona
-  tags         = ["grupo-2-fw"]
+  tags         = ["grupo-2-sv"]
 
   boot_disk {
     initialize_params {
@@ -43,4 +43,30 @@ resource "google_compute_instance" "app" {
   }
 
   metadata_startup_script = "arranque.sh"
+}
+
+resource "google_compute_firewall" "permitir_http" {
+  name    = "permitir-http"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["grupo-2-sv"]
+}
+
+resource "google_compute_firewall" "permitir_ssh" {
+  name    = "permitir-ssh"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["grupo-2-sv"]
 }
