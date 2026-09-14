@@ -42,5 +42,5 @@ resource "google_compute_instance" "app" {
     access_config {}
   }
 
-  metadata_startup_script = arranque.sh
+  metadata_startup_script = "arranque.sh"
 }
