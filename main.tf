@@ -42,7 +42,7 @@ resource "google_compute_instance" "app" {
     access_config {}
   }
 
-  metadata_startup_script = "arranque.sh"
+  metadata_startup_script = file("arranque.sh")
 }
 
 resource "google_compute_firewall" "permitir_http" {
