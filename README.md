@@ -24,29 +24,43 @@ flowchart LR
 
 > Añadir una evidencia verificable bajo cada título: captura, enlace o referencia al recurso correspondiente.
 
+### Fase 0 — [nombre de la fase]
+
+![Evidencia 0](evidencias/evidencia%200.png)
+
 ### Fase 1 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 1 y una breve descripción de qué demuestra.
+![Evidencia 1.1](evidencias/evidencia%201_1.png)
+
+![Evidencia 1.2](evidencias/evidencia%201_2.png)
+
+![Evidencia 1.3](evidencias/evidencia%201_3.png)
 
 ### Fase 2 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 2 y una breve descripción de qué demuestra.
+![Evidencia 2.1](evidencias/evidencia%202_1.png)
+
+![Evidencia 2.2](evidencias/evidencia%202_2.png)
 
 ### Fase 3 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 3 y una breve descripción de qué demuestra.
+![Evidencia 3.1](evidencias/evidencia%203_1.png)
+
+![Evidencia 3.2](evidencias/evidencia%203_2.png)
+
+![Evidencia 3.3](evidencias/evidencia3_3.png)
 
 ### Fase 4 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 4 y una breve descripción de qué demuestra.
+> **Pendiente:** incluir la evidencia de la fase 4.
 
 ### Fase 5 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 5 y una breve descripción de qué demuestra.
+> **Pendiente:** incluir la evidencia de la fase 5.
 
 ### Fase 6 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 6 y una breve descripción de qué demuestra.
+> **Pendiente:** incluir la evidencia de la fase 6.
 
 ## 3. Comandos ejecutados
 
