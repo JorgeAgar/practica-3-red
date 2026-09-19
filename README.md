@@ -52,7 +52,11 @@ flowchart LR
 
 ### Fase 4 — [nombre de la fase]
 
-> **Pendiente:** incluir la evidencia de la fase 4.
+![Evidencia 4.1](evidencias/evidencia%204_1.png)
+
+![Evidencia 4.2](evidencias/evidencia%204_2.png)
+
+![Evidencia 4.3](evidencias/evidencia%204_3.png)
 
 ### Fase 5 — [nombre de la fase]
 
