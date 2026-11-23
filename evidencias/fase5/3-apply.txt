@@ -1,0 +1,16 @@
+$ terraform apply -auto-approve
+google_compute_network.vpc: Creating...
+google_compute_network.vpc: Creation complete after 23s [id=projects/project-56eb9056-3ab4-4adb-b64/global/networks/grupo2-vpc]
+google_compute_subnetwork.publica: Creating...
+google_compute_firewall.ssh_iap: Creating...
+google_compute_firewall.permitir_http: Creating...
+google_compute_firewall.ssh_iap: Creation complete after 12s [id=projects/project-56eb9056-3ab4-4adb-b64/global/firewalls/grupo2-permitir-ssh-iap]
+google_compute_firewall.permitir_http: Creation complete after 12s [id=projects/project-56eb9056-3ab4-4adb-b64/global/firewalls/grupo2-permitir-http]
+google_compute_subnetwork.publica: Creation complete after 12s [id=projects/project-56eb9056-3ab4-4adb-b64/regions/us-central1/subnetworks/grupo2-sub-publica]
+google_compute_instance.app: Creating...
+google_compute_instance.app: Creation complete after 21s [id=projects/project-56eb9056-3ab4-4adb-b64/zones/us-central1-a/instances/grupo2-app]
+Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+Outputs:
+ip_publica = "35.232.75.145"
+red = "grupo2-vpc"
+subred_publica = "https://www.googleapis.com/compute/v1/projects/project-56eb9056-3ab4-4adb-b64/regions/us-central1/subnetworks/grupo2-sub-publica"

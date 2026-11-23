@@ -1,0 +1,4 @@
+$ curl -m 8 http://35.232.75.145
+  <h1><1152370 - 1152355></h1>
+  <p>Servidor de aplicación. IP interna: 10.10.1.2</p>
+  HTML

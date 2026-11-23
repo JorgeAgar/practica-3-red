@@ -1,0 +1,6 @@
+$ gcloud compute instances list
+Listed 0 items.
+
+$ gcloud compute networks list
+NAME     SUBNET_MODE  BGP_ROUTING_MODE  IPV4_RANGE  GATEWAY_IPV4  INTERNAL_IPV6_RANGE
+default  AUTO         REGIONAL

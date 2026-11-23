@@ -1,0 +1,19 @@
+$ terraform destroy -auto-approve
+google_compute_firewall.ssh_iap: Destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/firewalls/grupo2-permitir-ssh-iap]
+google_compute_firewall.permitir_http: Destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/firewalls/grupo2-permitir-http]
+google_compute_instance.app: Destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/zones/us-central1-a/instances/grupo2-app]
+google_compute_firewall.permitir_http: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/firewalls/grupo2-permitir-http, 00m10s elapsed]
+google_compute_firewall.ssh_iap: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/firewalls/grupo2-permitir-ssh-iap, 00m10s elapsed]
+google_compute_instance.app: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/zones/us-central1-a/instances/grupo2-app, 00m10s elapsed]
+google_compute_firewall.ssh_iap: Destruction complete after 13s
+google_compute_firewall.permitir_http: Destruction complete after 13s
+google_compute_instance.app: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/zones/us-central1-a/instances/grupo2-app, 00m20s elapsed]
+google_compute_instance.app: Destruction complete after 24s
+google_compute_subnetwork.publica: Destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/regions/us-central1/subnetworks/grupo2-sub-publica]
+google_compute_subnetwork.publica: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64...entral1/subnetworks/grupo2-sub-publica, 00m10s elapsed]
+google_compute_subnetwork.publica: Destruction complete after 12s
+google_compute_network.vpc: Destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/networks/grupo2-vpc]
+google_compute_network.vpc: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/networks/grupo2-vpc, 00m10s elapsed]
+google_compute_network.vpc: Still destroying... [id=projects/project-56eb9056-3ab4-4adb-b64/global/networks/grupo2-vpc, 00m20s elapsed]
+google_compute_network.vpc: Destruction complete after 22s
+Destroy complete! Resources: 5 destroyed.
