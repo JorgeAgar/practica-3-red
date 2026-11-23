@@ -2,8 +2,8 @@
 
 | Dato | Información |
 |---|---|
-| **Equipo** | Grupo 2: Jorge Reyes y Adolfo Alejandro Arenas |
-| **Códigos** | 1152370 · 1152355 |
+| **Equipo** | Grupo 2: Jorge Reyes ([JorgeAgar](https://github.com/JorgeAgar)) y Adolfo Alejandro Arenas ([a-cubica-r](https://github.com/a-cubica-r)) |
+| **Códigos** | Jorge Reyes 1152355 · Adolfo Alejandro Arenas 1152370 |
 | **Proyecto de Google Cloud** | `project-56eb9056-3ab4-4adb-b64` |
 | **Prefijo de los recursos** | `grupo2` |
 | **Región / zona** | `us-central1` / `us-central1-a` |
