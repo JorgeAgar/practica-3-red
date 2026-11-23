@@ -23,52 +23,11 @@ resource "google_compute_subnetwork" "publica" {
   network       = google_compute_network.vpc.id
 }
 
-resource "google_compute_instance" "app" {
-  name         = "${var.prefijo}-app"
-  machine_type = var.tipo_maquina
-  zone         = var.zona
-  tags         = ["grupo-2-sv"]
-
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-12"
-    }
-  }
-
-  network_interface {
-    # la máquina debe quedar en tu subred, no en la default
-    subnetwork = google_compute_subnetwork.publica.id
-    # un bloque vacío aquí otorga una IP pública efímera
-    access_config {}
-  }
-
-  metadata_startup_script = file("arranque.sh")
-}
-
-resource "google_compute_firewall" "permitir_http" {
-  name    = "${var.prefijo}-permitir-http"
-  network = google_compute_network.vpc.name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80"]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["grupo-2-sv"]
-}
-
-resource "google_compute_firewall" "ssh_iap" {
-  name    = "${var.prefijo}-permitir-ssh-iap"
-  network = google_compute_network.vpc.name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["22"]
-  }
-
-  # 35.235.240.0/20 es el rango desde el que Google reenvía SSH
-  # a través de IAP. Es el único origen autorizado para el 22.
-  source_ranges = ["35.235.240.0/20"]
-  target_tags   = ["grupo-2-sv"]
+# Subred de datos: ninguna máquina de aquí tiene IP pública.
+# Sale a internet solo por el NAT (nat.tf).
+resource "google_compute_subnetwork" "datos" {
+  name          = "${var.prefijo}-sub-datos"
+  ip_cidr_range = var.cidr_privada
+  region        = var.region
+  network       = google_compute_network.vpc.id
 }

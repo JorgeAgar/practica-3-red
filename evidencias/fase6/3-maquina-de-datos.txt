@@ -1,0 +1,22 @@
+$ gcloud compute ssh grupo2-datos --tunnel-through-iap
+grupo2-datos
+$ curl -s -m 5 https://ifconfig.me   # sale a internet por el NAT
+35.232.75.145
+$ ss -ltn | grep 6379
+LISTEN 0      511        127.0.0.1:6379      0.0.0.0:*          
+LISTEN 0      511        10.10.2.2:6379      0.0.0.0:*          
+$ redis-cli ping
+PONG
+$ redis-cli get visitas
+5
+$ redis-cli --version
+redis-cli 7.0.15
+
+# Desde Cloud Shell / portátil: la IP con la que sale el NAT es la misma que vio ifconfig.me
+$ gcloud compute routers get-nat-ip-info grupo2-router --region us-central1
+result:
+- natIpInfoMappings:
+  - mode: AUTO
+    natIp: 35.232.75.145
+    usage: IN_USE
+  natName: grupo2-nat

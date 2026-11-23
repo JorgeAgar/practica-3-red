@@ -13,3 +13,13 @@ output "ip_publica" {
   description = "IP pública de la máquina de aplicación"
 }
 
+
+output "subred_datos" {
+  value       = google_compute_subnetwork.datos.self_link
+  description = "Identificador completo de la subred de datos"
+}
+
+output "ip_interna_datos" {
+  value       = google_compute_instance.datos.network_interface[0].network_ip
+  description = "IP interna de la máquina de datos (no tiene IP pública)"
+}

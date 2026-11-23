@@ -1,0 +1,14 @@
+# La página depende de verdad de la máquina de datos
+$ gcloud compute ssh grupo2-datos --tunnel-through-iap --command "sudo systemctl stop redis-server"
+inactive
+
+$ curl -sS -m 10 -w '\nHTTP %{http_code}\n' http://35.253.221.200
+<!doctype html><meta charset="utf-8"><title>Grupo 2</title><h1>Grupo 2</h1><p>La máquina de datos (10.10.2.2) no responde: [Errno 111] Connection refused</p>
+HTTP 503
+
+$ gcloud compute ssh grupo2-datos --tunnel-through-iap --command "sudo systemctl start redis-server"
+active
+
+$ curl -sS -m 10 -w '\nHTTP %{http_code}\n' http://35.253.221.200
+<!doctype html><meta charset="utf-8"><title>Grupo 2</title><h1>Grupo 2 · 1152370 · 1152355</h1><p>Servidor de aplicación. IP interna: 10.10.1.3</p><p>Visitas: <strong>6</strong>, contadas por Redis en la máquina de datos (10.10.2.2).</p>
+HTTP 200

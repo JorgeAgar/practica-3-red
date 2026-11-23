@@ -1,0 +1,16 @@
+$ gcloud compute instances list
+NAME          ZONE           MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP     STATUS
+grupo2-app    us-central1-a  e2-micro                   10.10.1.3    35.253.221.200  RUNNING
+grupo2-datos  us-central1-a  e2-micro                   10.10.2.2                    RUNNING
+
+# Desde fuera de Google (un portátil en una red doméstica):
+$ curl -sS -m 8 telnet://10.10.2.2:6379   # la IP interna no existe fuera de la VPC
+curl: (28) Connection timed out after 8001 milliseconds
+(código de salida: 28)
+
+$ curl -sS -m 8 telnet://35.253.221.200:6379   # por la IP pública de la aplicación tampoco se llega al 6379
+curl: (28) Connection timed out after 8001 milliseconds
+(código de salida: 28)
+
+$ curl -sS -m 8 http://35.253.221.200   # el 80 de la aplicación sí responde
+<!doctype html><meta charset="utf-8"><title>Grupo 2</title><h1>Grupo 2 · 1152370 · 1152355</h1><p>Servidor de aplicación. IP interna: 10.10.1.3</p><p>Visitas: <strong>5</strong>, contadas por Redis en la máquina de datos (10.10.2.2).</p>

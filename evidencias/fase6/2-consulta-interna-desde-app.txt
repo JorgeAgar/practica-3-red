@@ -1,0 +1,8 @@
+$ gcloud compute ssh grupo2-app --tunnel-through-iap
+grupo2-app
+$ printf "PING\r\n" > /dev/tcp/10.10.2.2/6379 (con bash)
++PONG
+
+$ curl -sS -m 5 telnet://10.10.2.2:22  # el 22 de datos no está permitido desde la app
+curl: (28) Connection timed out after 5000 milliseconds
+(código de salida: 28)
